@@ -9,6 +9,7 @@ import { Player } from './player';
   <div *ngIf="player">
     <h2>{{player.name}}</h2>
     <div><label>Player Number: </label>{{player.number}}</div>
+    <div><label>Player Position: </label>{{player.position}}</div>
     <div>
       <label>Player Name: </label>
       <input [(ngModel)]="player.name" placeholder="name"/>

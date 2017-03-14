@@ -5,7 +5,7 @@ import { PLAYERS } from './mock-players';
 
 @Injectable()
 export class PlayerService {
-  getPlayers(): Player[] {
-    return PLAYERS;
+  getPlayers(): Promise<Player[]> {
+    return Promise.resolve(PLAYERS);
   }
 }

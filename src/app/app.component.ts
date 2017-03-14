@@ -13,7 +13,7 @@ import { PlayerService } from './player.service';
   selector: 'my-app',
   template: `
   <h1>{{title}}</h1>
-  <h2>Players</h2>
+  <h2>Player List</h2>
   <ul class="players">
     <li *ngFor="let player of players" [class.selected]="player === selectedPlayer"
 (click)="onSelect(player)">
@@ -83,7 +83,7 @@ export class AppComponent implements OnInit {
   constructor(private playerService: PlayerService) { }
 
   getPlayers(): void {
-    this.players = this.playerService.getPlayers();
+    this.playerService.getPlayers().then(players => this.players = players);
   }
 
   ngOnInit(): void {
